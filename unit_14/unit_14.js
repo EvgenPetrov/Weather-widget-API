@@ -25,17 +25,35 @@ function showWeather(data) {
   const weatherIconElement = document.getElementById("weather-icon");
   const pressureElement = document.getElementById("pressure");
 
+  const weatherIconId = data.weather[0].icon;
+  const iconUrl = `https://openweathermap.org/img/w/${weatherIconId}.png`;
+  weatherIconElement.src = iconUrl;
   cityNameElement.textContent = data.name;
   temperatureElement.textContent = data.main.temp;
   weatherElement.textContent = data.weather[0].description;
   windSpeedElement.textContent = data.wind.speed;
-  windDirectionElement.textContent = data.wind.deg;
-
-  const weatherIconId = data.weather[0].icon;
-  const iconUrl = `https://openweathermap.org/img/w/${weatherIconId}.png`;
-  weatherIconElement.src = iconUrl;
-
+  windDirectionElement.textContent = getWindDirectionDescription(data.wind.deg);
   pressureElement.textContent = data.main.pressure;
+}
+
+function getWindDirectionDescription(degrees) {
+  if (degrees >= 337.5 || degrees < 22.5) {
+    return "Северное";
+  } else if (degrees >= 22.5 && degrees < 67.5) {
+    return "Северо-восточное";
+  } else if (degrees >= 67.5 && degrees < 112.5) {
+    return "Восточное";
+  } else if (degrees >= 112.5 && degrees < 157.5) {
+    return "Юго-восточное";
+  } else if (degrees >= 157.5 && degrees < 202.5) {
+    return "Южное";
+  } else if (degrees >= 202.5 && degrees < 247.5) {
+    return "Юго-западное";
+  } else if (degrees >= 247.5 && degrees < 292.5) {
+    return "Западное";
+  } else if (degrees >= 292.5 && degrees < 337.5) {
+    return "Северо-западное";
+  }
 }
 
 document.addEventListener("DOMContentLoaded", function () {
