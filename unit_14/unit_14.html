@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Unit 14</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>UNIT 14. API Погода</h1>
+      <h2>
+        <a href="https://itgid.info/course/javascript-2" target="_blank"
+          >JavaScript v.2.0 - курс Лущенко Александра</a
+        >
+      </h2>
+      <div class="weather-widget">
+        <h2>Weather Widget</h2>
+        <select id="city">
+          <option value="2643743">London</option>
+          <option value="2968815">Paris</option>
+          <option value="703448">Kyiv</option>
+          <option value="745044">Istanbul</option>
+          <option value="3451189">Rio de Janeiro</option>
+        </select>
+        <div class="weather-info">
+          <h3>Weather in <span id="city-name"></span></h3>
+          <p>Temperature: <span id="temperature"></span> °C</p>
+          <p>Weather: <span id="weather"></span></p>
+          <p>Wind Speed: <span id="wind-speed"></span> m/s</p>
+          <p>Humidity: <span id="humidity"></span>%</p>
+          <p>Pressure: <span id="pressure"></span> hPa</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="unit_14.js"></script>
+  </body>
+</html>
